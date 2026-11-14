@@ -49,11 +49,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("บอทนี้รองรับเฉพาะลิงก์แอป C1 Cloud Station เท่านั้นครับ")
 
 def main():
-    # ดึง Token จาก Environment Variable บน Render
-    TOKEN = os.getenv("BOT_TOKEN")
-    if not TOKEN:9179167213:AAHyJgbGjyDQc6pRNxJbKJuutAmOJA53f7s
-        print("Error: BOT_TOKEN environment variable not set!")
-        return
+    # ใส่ Token บอทของคุณโดยตรง
+    TOKEN = "9179167213:AAHyJgbGjyDQc6pRNxJbKJuutAmOJA53f7s"
         
     application = ApplicationBuilder().token(TOKEN).build()
     application.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
